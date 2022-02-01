@@ -11,7 +11,7 @@ public class Experience{
     private Long id;
     private String name;
     private String description;
-    private double price;
+    private int price;
     private int duration;
     private String accessibility;
     private String label;
@@ -19,8 +19,13 @@ public class Experience{
 
     public Experience() {
     }
-
-
+    public Experience(String name, String description,int price, int duration,String accessibility, String label ) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.duration = duration;
+        this.accessibility = accessibility;
+        this.label = label;
 
 
     public Long getId() {
@@ -103,4 +108,4 @@ public class Experience{
                 ", label='" + label + '\'' +
                 '}';
     }
-}
+};

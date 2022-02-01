@@ -20,8 +20,8 @@ public class SampleDataLoader {
     public void loadSampleData() {
         experienceRepository.saveAll(List.of(
 
-                new Experience("Paseo globo", "gfgdfgd", 250.00, 5, "tp", "gfdfgdfg"),
-                new Experience("Paseo Bici", "gfgdfgd", 250.00, 5, "tp", "gfdfgdfg")
+                new Experience("Paseo ", "gfgdfgd", 250, 5, "tp", "gfdfgdfg"),
+                new Experience("Paseo Bici", "gfgdfgd", 250, 5, "tp", "gfdfgdfg")
         ));
 
     }
