@@ -1,6 +1,7 @@
 package com.econotravel.api.repositories;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name="experiences")
@@ -8,7 +9,6 @@ public class Experience{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
     private String description;
     private double price;
@@ -20,9 +20,8 @@ public class Experience{
     public Experience() {
     }
 
-    public Experience(String name) {
-        this.name = name;
-    }
+
+
 
     public Long getId() {
         return id;
@@ -77,5 +76,31 @@ public class Experience{
 
     public void setLabel(String label) {
         this.label = label;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Experience that = (Experience) o;
+        return Double.compare(that.price, price) == 0 && duration == that.duration && Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(description, that.description) && Objects.equals(accessibility, that.accessibility) && Objects.equals(label, that.label);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, price, duration, accessibility, label);
+    }
+
+    @Override
+    public String toString() {
+        return "Experience{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", duration=" + duration +
+                ", accessibility='" + accessibility + '\'' +
+                ", label='" + label + '\'' +
+                '}';
     }
 }
