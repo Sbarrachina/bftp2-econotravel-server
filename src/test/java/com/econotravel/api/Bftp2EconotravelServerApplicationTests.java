@@ -68,6 +68,7 @@ class Bftp2EconotravelServerApplicationTests {
                 .content("{\"name\": \"Paseo en Bici por el Montseny\"}")
         ).andExpect(status().is(200));
 
+
         var experiences = experienceRepository.findAll();
 
         assertThat(experiences, contains(
