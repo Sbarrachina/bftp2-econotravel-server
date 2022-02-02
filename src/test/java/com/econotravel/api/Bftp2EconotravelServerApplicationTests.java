@@ -45,13 +45,16 @@ class Bftp2EconotravelServerApplicationTests {
                 .andExpect(jsonPath("$[*]", hasSize(2)))
                 .andExpect(jsonPath("$[0].name", equalTo("Paseo por el Montseny")))
                 .andExpect(jsonPath("$[1].name", equalTo("Visita a la sagrada familia")))
+                .andExpect(jsonPath("$[0].price", equalTo(300)))
+                .andExpect(jsonPath("$[1].price", equalTo(300)))
+
                 .andDo(print());
     }
 
     private void addSampleExperiences() {
         List<Experience> movies = List.of(
-                new Experience("Paseo por el Montseny"),
-                new Experience("Visita a la sagrada familia")
+                new Experience("Paseo por el Montseny", 300),
+                new Experience("Visita a la sagrada familia", 300)
         );
 
         experienceRepository.saveAll(movies);
