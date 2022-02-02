@@ -3,6 +3,7 @@ package com.econotravel.api.controllers;
 import com.econotravel.api.repositories.Experience;
 import com.econotravel.api.repositories.ExperienceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class ExperienceController {
     }
 
     @GetMapping
-    public List<Experience> allExperiences() {
+    public List<Experience>  allExperiences() {
 
         return experienceRepository.findAll();
 
@@ -40,5 +41,13 @@ public class ExperienceController {
     public void deleteExperience(@PathVariable Long id) {
         experienceRepository.deleteById(id);
     }
+
+
+
+
+
+
+
+
 
 }
