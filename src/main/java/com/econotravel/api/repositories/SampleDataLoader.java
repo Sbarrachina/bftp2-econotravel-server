@@ -20,9 +20,12 @@ public class SampleDataLoader {
     public void loadSampleData() {
         experienceRepository.saveAll(List.of(
 
-                new Experience("Paseo por el Montseny", 300),
-                new Experience("Visita a la sagrada familia", 300)
-        ));
+                new Experience("Paseo por el Montseny", 300, 5),
+                new Experience("Visita a la sagrada familia", 300, 4),
+                new Experience("Descubre la Barcelona Modernista de noche", 200, 4),
+                new Experience("Del huerto a la mesa", 145, 3),
+                new Experience("Arte en la montaña sagrada", 125, 2)));
+
 
     }
 }

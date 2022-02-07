@@ -13,12 +13,15 @@ public class Experience{
 
     private int price;
 
+    private int duration;
+
     public Experience() {
     }
 
-    public Experience(String name, int price) {
+    public Experience(String name, int price, int duration) {
         this.name = name;
-        this.price= price;
+        this.price = price;
+        this.duration = duration;
     }
 
     public Long getId() {
@@ -45,17 +48,26 @@ public class Experience{
         this.price = price;
     }
 
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Experience that = (Experience) o;
-        return price == that.price && Objects.equals(id, that.id) && Objects.equals(name, that.name);
+        return price == that.price && Objects.equals(id, that.id) && Objects.equals(name, that.name)
+                && Objects.equals(duration, that.duration);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, price);
+        return Objects.hash(id, name, price, duration);
     }
 
     @Override
@@ -64,6 +76,7 @@ public class Experience{
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
+                ", duration=" + duration +
                 '}';
     }
 }
