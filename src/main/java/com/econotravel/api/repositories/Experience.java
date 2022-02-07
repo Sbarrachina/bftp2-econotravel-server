@@ -15,13 +15,22 @@ public class Experience{
 
     private int duration;
 
-    public Experience() {
+    private String accessibility;
+
+    private String description;
+
+    private String label;
+
+
     }
 
-    public Experience(String name, int price, int duration) {
+    public Experience(String name, int price, int duration, String accessibility, String description, String label) {
         this.name = name;
         this.price = price;
         this.duration = duration;
+        this.accessibility = accessibility;
+        this.description = description;
+        this.label = label;
     }
 
     public Long getId() {
@@ -56,18 +65,43 @@ public class Experience{
         this.duration = duration;
     }
 
+    public String getAccessibility() {
+        return accessibility;
+    }
+
+    public void setAccessibility(String accessibility) {
+        this.accessibility = accessibility;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Experience that = (Experience) o;
         return price == that.price && Objects.equals(id, that.id) && Objects.equals(name, that.name)
-                && Objects.equals(duration, that.duration);
+                && Objects.equals(duration, that.duration) && Objects.equals(accessibility, that.accessibility) && Objects.equals(description, that.description) && Objects.equals(label, that.label);
     }
+
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, price, duration);
+        return Objects.hash(id, name, price, duration, accessibility, description, label);
     }
 
     @Override
@@ -77,6 +111,9 @@ public class Experience{
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", duration=" + duration +
+                ", accessibility=" + accessibility +
+                ", description=" + description +
+                ", label=" + label +
                 '}';
     }
 }
