@@ -27,12 +27,12 @@ public class Experience {
         this.name = name;
         this.price = price;
         this.duration = duration;
-        this.accessibility = accessibility;
         this.description = description;
+        this.accessibility = accessibility;
         this.label = label;
     }
 
-    public Experience() {
+    public Experience(String s, int i) {
 
     }
 
