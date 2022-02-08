@@ -19,7 +19,7 @@ public class Experience {
     private String accessibility;
 
     private String description;
-
+    @Lob
     private String label;
 
 
