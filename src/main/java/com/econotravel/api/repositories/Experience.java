@@ -1,10 +1,11 @@
 package com.econotravel.api.repositories;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="experiences")
-public class Experience{
+@Table(name = "experiences")
+public class Experience {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,8 +23,6 @@ public class Experience{
     private String label;
 
 
-    }
-
     public Experience(String name, int price, int duration, String accessibility, String description, String label) {
         this.name = name;
         this.price = price;
@@ -31,6 +30,10 @@ public class Experience{
         this.accessibility = accessibility;
         this.description = description;
         this.label = label;
+    }
+
+    public Experience() {
+
     }
 
     public Long getId() {
@@ -117,3 +120,4 @@ public class Experience{
                 '}';
     }
 }
+
