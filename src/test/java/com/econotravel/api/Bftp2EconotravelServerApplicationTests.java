@@ -42,16 +42,16 @@ class Bftp2EconotravelServerApplicationTests {
 
         mockMvc.perform(get("/api/experiences"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[*]", hasSize(5)))
+                .andExpect(jsonPath("$[*]", hasSize(4)))
                 .andExpect(jsonPath("$[0].name", equalTo("Paseo en bicicleta por el Montseny")))
-                .andExpect(jsonPath("$[0].price", equalTo(250)))
+                .andExpect(jsonPath("$[0].price", equalTo(300)))
                 .andExpect(jsonPath("$[0].duration", equalTo(5)))
-                .andExpect(jsonPath("$[0].accessibility", equalTo("Actividad disponible para todas las edades.",)))
+                .andExpect(jsonPath("$[0].accessibility", equalTo("Actividad disponible para todas las edades.")))
                 .andExpect(jsonPath("$[0].description", equalTo("Disfruta de la impresionante Montaña de Montserrat donde encontraréis el Museo con las salas modernistas de Puig i Cadafalch, lugar que acoge colecciones de gran valor en el corazón de la emblemática montaña. En el Museo encontraréis pinturas del Renacimiento y del Barroco que conviven con autores de los siglos XIX y XX, objetos del Próximo Oriente y orfebrería. Además de disfrutar de un paseo guiado por la montaña y el Museo, esta actividad incluye tentempié variado acompañado de vino espumoso, cava brut o refresco.")))
-                .andExpect(jsonPath("$[0].label", equalTo("Montaña, a pie, excursión corta.")))
+                .andExpect(jsonPath("$[0].label", equalTo("Montaña, bicicleta,excursión larga.")))
 
                 .andExpect(jsonPath("$[1].name", equalTo("Descubre la costa en barco de vela")))
-                .andExpect(jsonPath("$[1].price", equalTo(280)))
+                .andExpect(jsonPath("$[1].price", equalTo(250)))
                 .andExpect(jsonPath("$[1].duration", equalTo(4)))
                 .andExpect(jsonPath("$[1].accessibility", equalTo("Actividad disponible para todas las edades. Pasarela para silla de ruedas disponible bajo reserva."
                 )))
@@ -62,7 +62,7 @@ class Bftp2EconotravelServerApplicationTests {
                 .andExpect(jsonPath("$[2].price", equalTo(200)))
                 .andExpect(jsonPath("$[2].duration", equalTo(4)))
                 .andExpect(jsonPath("$[2].accessibility", equalTo("Actividad disponible para todas las edades. Accesibilidad garantizada para sillas de ruedas")))
-                .andExpect(jsonPath("$[2].description", equalTo("Desplazarse a pie es una de las mejores formas de descubrir las maravillas modernistas que se esconden en el barcelonés distrito del Eixample, ubicado en el centro de la ciudad. En esta excursión de cuatro horas, descubriremos los principales emblemas del modernismo y visitaremos los templos y edificios más célebres del arquitecto Gaudí.El tour incluye visita guiada al interior de la Casa Batlló y la Sagrada Familia, así como parada para cenar en el restaurante típico catalán Can Masiá, donde disfrutaremos de las mejores carnes de la región acompañadas de vinos de las tierras del Baix Empordá. El restaurante también ofrece opciones vegetarianas y veganas así como menú para niños. Cava aparte.",)))
+                .andExpect(jsonPath("$[2].description", equalTo("Desplazarse a pie es una de las mejores formas de descubrir las maravillas modernistas que se esconden en el barcelonés distrito del Eixample, ubicado en el centro de la ciudad. En esta excursión de cuatro horas, descubriremos los principales emblemas del modernismo y visitaremos los templos y edificios más célebres del arquitecto Gaudí.El tour incluye visita guiada al interior de la Casa Batlló y la Sagrada Familia, así como parada para cenar en el restaurante típico catalán Can Masiá, donde disfrutaremos de las mejores carnes de la región acompañadas de vinos de las tierras del Baix Empordá. El restaurante también ofrece opciones vegetarianas y veganas así como menú para niños. Cava aparte.")))
                 .andExpect(jsonPath("$[2].label", equalTo("Ciudad, a pie, excursión larga.")))
 
                 .andExpect(jsonPath("$[3].name", equalTo("Del huerto a la mesa ")))
@@ -85,11 +85,15 @@ class Bftp2EconotravelServerApplicationTests {
 
     private void addSampleExperiences() {
         List<Experience> experiences = List.of(
-                new Experience("Paseo en bicicleta por el Montseny", 300),
-                new Experience("Descubre la costa en barco de vela", 250),
-                new Experience("Descubre la Barcelona Modernista de noche", 200),
-                new Experience("Del huerto a la mesa", 145),
-                new Experience("Arte en la montaña sagrada", 125)
+                new Experience("Paseo en bicicleta por el Montseny", 300,5,"Actividad disonible para todas las edades","\"Disfruta de la impresionante Montaña de Montserrat donde encontraréis el Museo con las salas modernistas de Puig i Cadafalch, lugar que acoge colecciones de gran valor en el corazón de la emblemática montaña.","Montaña, bicicleta, excursión laga"),
+
+                new Experience("Descubre la costa en barco de vela", 250,4,"Actividad disponible para todas edades y accesible para silla de ruedas","Disfruta de un hermoso paseo acuático en barco de vela por la increíble costa de Barcelona. Una escapada veraniega apta incluso para los días más calurosos del año. Descubre los encantadores alrededores de la ciudad de Barcelona y visita desde el mar sus más impresionantes playas y calas.","playa,barco, excursión larga"),
+
+                new Experience("Descubre la Barcelona Modernista de noche", 200,4,"Actividad disponible para todas las edades y accesible para silla de ruedas","Desplazarse a pie es una de las mejores formas de descubrir las maravillas modernistas que se esconden en el barcelonés distrito del Eixample, ubicado en el centro de la ciudad.","ciudad a pie,excursión larga"),
+
+                new Experience("Del huerto a la mesa", 145,3,"Actividad disponible para todas las edades","Comparte con los más pequeños las maravillas de la naturaleza. En esta excursión breve de tres horas, podréis plantar vuestras propias hortalizas y verduras en el huerto de Can Gilabert, ubicado en el corazón del Montbaig.","Montaña, a pie,excursión corta"),
+
+                new Experience("Arte en la montaña sagrada", 125,2,"Actividad disponible para todas las edades","Disfruta de la impresionante Montaña de Montserrat donde encontraréis el Museo con las salas modernistas de Puig i Cadafalch, lugar que acoge colecciones de gran valor en el corazón de la emblemática montaña.","Montaña, a pie,excursión corta")
         );
 
         experienceRepository.saveAll(experiences);
