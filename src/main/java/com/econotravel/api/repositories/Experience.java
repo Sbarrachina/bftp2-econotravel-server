@@ -1,21 +1,17 @@
 package com.econotravel.api.repositories;
-
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "experiences")
+
 public class Experience {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
-    private int price;
-
-    private int duration;
-
+    private double price;
+    private String duration;
     private String accessibility;
     @Lob
     private String description;
@@ -25,6 +21,12 @@ public class Experience {
 
 
     public Experience(String name, int price, int duration, String accessibility, String description, String label, String image) {
+    @Lob
+    private String description;
+    private String labels;
+
+
+    public Experience(String name, double price, String duration, String accessibility, String description, String labels) {
         this.name = name;
         this.price = price;
         this.duration = duration;
@@ -32,9 +34,10 @@ public class Experience {
         this.accessibility = accessibility;
         this.label = label;
         this.image = image;
+        this.labels = labels;
     }
 
-    public Experience(String s, int i) {
+    public Experience() {
 
     }
 
@@ -58,19 +61,19 @@ public class Experience {
         this.name = name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    public int getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 
@@ -91,11 +94,11 @@ public class Experience {
     }
 
     public String getLabel() {
-        return label;
+        return labels;
     }
 
     public void setLabel(String label) {
-        this.label = label;
+        this.labels = label;
     }
 
     public String getImage() {
@@ -113,12 +116,14 @@ public class Experience {
         Experience that = (Experience) o;
         return price == that.price && Objects.equals(id, that.id) && Objects.equals(name, that.name)
                 && Objects.equals(duration, that.duration) && Objects.equals(accessibility, that.accessibility) && Objects.equals(description, that.description) && Objects.equals(label, that.label)&& Objects.equals(image, that.image);
+                && Objects.equals(duration, that.duration) && Objects.equals(accessibility, that.accessibility) && Objects.equals(description, that.description) && Objects.equals(labels, that.labels);
     }
 
 
     @Override
     public int hashCode() {
         return Objects.hash(id, name, price, duration, accessibility, description, label,image);
+        return Objects.hash(id, name, price, duration, accessibility, description, labels);
     }
 
     @Override
@@ -133,6 +138,7 @@ public class Experience {
                 ", label=" + label +
                 ", image=" + image +
 
+                ", label=" + labels +
                 '}';
     }
 }
