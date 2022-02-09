@@ -11,7 +11,7 @@ public class Experience {
     private Long id;
     private String name;
     private double price;
-    private String duration;
+    private int duration;
     private String accessibility;
     @Lob
     private String description;
@@ -21,12 +21,7 @@ public class Experience {
 
 
     public Experience(String name, int price, int duration, String accessibility, String description, String label, String image) {
-    @Lob
-    private String description;
-    private String labels;
 
-
-    public Experience(String name, double price, String duration, String accessibility, String description, String labels) {
         this.name = name;
         this.price = price;
         this.duration = duration;
@@ -34,12 +29,9 @@ public class Experience {
         this.accessibility = accessibility;
         this.label = label;
         this.image = image;
-        this.labels = labels;
     }
 
-    public Experience() {
 
-    }
 
     public Experience() {
 
@@ -69,11 +61,11 @@ public class Experience {
         this.price = price;
     }
 
-    public String getDuration() {
+    public int getDuration() {
         return duration;
     }
 
-    public void setDuration(String duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 
@@ -93,13 +85,6 @@ public class Experience {
         this.description = description;
     }
 
-    public String getLabel() {
-        return labels;
-    }
-
-    public void setLabel(String label) {
-        this.labels = label;
-    }
 
     public String getImage() {
         return image;
@@ -116,14 +101,13 @@ public class Experience {
         Experience that = (Experience) o;
         return price == that.price && Objects.equals(id, that.id) && Objects.equals(name, that.name)
                 && Objects.equals(duration, that.duration) && Objects.equals(accessibility, that.accessibility) && Objects.equals(description, that.description) && Objects.equals(label, that.label)&& Objects.equals(image, that.image);
-                && Objects.equals(duration, that.duration) && Objects.equals(accessibility, that.accessibility) && Objects.equals(description, that.description) && Objects.equals(labels, that.labels);
+
     }
 
 
     @Override
     public int hashCode() {
         return Objects.hash(id, name, price, duration, accessibility, description, label,image);
-        return Objects.hash(id, name, price, duration, accessibility, description, labels);
     }
 
     @Override
@@ -138,7 +122,6 @@ public class Experience {
                 ", label=" + label +
                 ", image=" + image +
 
-                ", label=" + labels +
                 '}';
     }
 }
