@@ -17,22 +17,28 @@ public class Experience {
     private int duration;
 
     private String accessibility;
-
+    @Lob
     private String description;
     @Lob
     private String label;
+    private String image;
 
 
-    public Experience(String name, int price, int duration, String accessibility, String description, String label) {
+    public Experience(String name, int price, int duration, String accessibility, String description, String label, String image) {
         this.name = name;
         this.price = price;
         this.duration = duration;
         this.description = description;
         this.accessibility = accessibility;
         this.label = label;
+        this.image = image;
     }
 
     public Experience(String s, int i) {
+
+    }
+
+    public Experience() {
 
     }
 
@@ -92,19 +98,27 @@ public class Experience {
         this.label = label;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Experience that = (Experience) o;
         return price == that.price && Objects.equals(id, that.id) && Objects.equals(name, that.name)
-                && Objects.equals(duration, that.duration) && Objects.equals(accessibility, that.accessibility) && Objects.equals(description, that.description) && Objects.equals(label, that.label);
+                && Objects.equals(duration, that.duration) && Objects.equals(accessibility, that.accessibility) && Objects.equals(description, that.description) && Objects.equals(label, that.label)&& Objects.equals(image, that.image);
     }
 
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, price, duration, accessibility, description, label);
+        return Objects.hash(id, name, price, duration, accessibility, description, label,image);
     }
 
     @Override
@@ -117,6 +131,8 @@ public class Experience {
                 ", accessibility=" + accessibility +
                 ", description=" + description +
                 ", label=" + label +
+                ", image=" + image +
+
                 '}';
     }
 }
