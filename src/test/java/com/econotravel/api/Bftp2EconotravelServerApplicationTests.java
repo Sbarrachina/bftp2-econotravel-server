@@ -100,7 +100,6 @@ class Bftp2EconotravelServerApplicationTests {
                 .andExpect(jsonPath("$[4].image", equalTo("image.png")))
 
 
-                .andExpect(jsonPath("$[4].labels", equalTo("Montaña, a pie,excursión corta")))
 
                 .andDo(print());
     }
