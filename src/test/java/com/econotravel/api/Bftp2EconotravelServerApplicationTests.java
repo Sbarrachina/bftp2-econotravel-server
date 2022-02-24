@@ -107,26 +107,16 @@ class Bftp2EconotravelServerApplicationTests {
 
     private void addSampleExperiences() {
         List<Experience> experiences = List.of(
-                new Experience("Paseo en bicicleta por el Montseny", 300,5,"Actividad disonible para todas las edades","\"Disfruta de la impresionante Montaña de Montserrat donde encontraréis el Museo con las salas modernistas de Puig i Cadafalch, lugar que acoge colecciones de gran valor en el corazón de la emblemática montaña.","Montaña, bicicleta, excursión laga","image.png"),
+                new Experience(1l,"Paseo en bicicleta por el Montseny", 300,5,"Actividad disonible para todas las edades","\"Disfruta de la impresionante Montaña de Montserrat donde encontraréis el Museo con las salas modernistas de Puig i Cadafalch, lugar que acoge colecciones de gran valor en el corazón de la emblemática montaña.","Montaña, bicicleta, excursión laga","image.png"),
 
-                new Experience("Descubre la costa en barco de vela", 250,4,"Actividad disponible para todas edades y accesible para silla de ruedas","Disfruta de un hermoso paseo acuático en barco de vela por la increíble costa de Barcelona. Una escapada veraniega apta incluso para los días más calurosos del año. Descubre los encantadores alrededores de la ciudad de Barcelona y visita desde el mar sus más impresionantes playas y calas.","playa,barco, excursión larga","image.png"),
+                new Experience(2l,"Descubre la costa en barco de vela", 250,4,"Actividad disponible para todas edades y accesible para silla de ruedas","Disfruta de un hermoso paseo acuático en barco de vela por la increíble costa de Barcelona. Una escapada veraniega apta incluso para los días más calurosos del año. Descubre los encantadores alrededores de la ciudad de Barcelona y visita desde el mar sus más impresionantes playas y calas.","playa,barco, excursión larga","image.png"),
 
-                new Experience("Descubre la Barcelona Modernista de noche", 200,4,"Actividad disponible para todas las edades y accesible para silla de ruedas","Desplazarse a pie es una de las mejores formas de descubrir las maravillas modernistas que se esconden en el barcelonés distrito del Eixample, ubicado en el centro de la ciudad.","ciudad a pie,excursión larga","image.png"),
+                new Experience(3l,"Descubre la Barcelona Modernista de noche", 200,4,"Actividad disponible para todas las edades y accesible para silla de ruedas","Desplazarse a pie es una de las mejores formas de descubrir las maravillas modernistas que se esconden en el barcelonés distrito del Eixample, ubicado en el centro de la ciudad.","ciudad a pie,excursión larga","image.png"),
 
-                new Experience("Del huerto a la mesa", 145,3,"Actividad disponible para todas las edades","Comparte con los más pequeños las maravillas de la naturaleza. En esta excursión breve de tres horas, podréis plantar vuestras propias hortalizas y verduras en el huerto de Can Gilabert, ubicado en el corazón del Montbaig.","Montaña, a pie,excursión corta","image.png"),
+                new Experience(4l,"Del huerto a la mesa", 145,3,"Actividad disponible para todas las edades","Comparte con los más pequeños las maravillas de la naturaleza. En esta excursión breve de tres horas, podréis plantar vuestras propias hortalizas y verduras en el huerto de Can Gilabert, ubicado en el corazón del Montbaig.","Montaña, a pie,excursión corta","image.png"),
 
-                new Experience("Arte en la montaña sagrada", 125,2,"Actividad disponible para todas las edades","Disfruta de la impresionante Montaña de Montserrat donde encontraréis el Museo con las salas modernistas de Puig i Cadafalch, lugar que acoge colecciones de gran valor en el corazón de la emblemática montaña.","Montaña, a pie,excursión corta","image.png"),
+                new Experience(5l,"Arte en la montaña sagrada", 125,2,"Actividad disponible para todas las edades","Disfruta de la impresionante Montaña de Montserrat donde encontraréis el Museo con las salas modernistas de Puig i Cadafalch, lugar que acoge colecciones de gran valor en el corazón de la emblemática montaña.","Montaña, a pie,excursión corta","image.png"),
 
-                new Experience("Paseo en bicicleta por el Montseny", 300,5,"Actividad disonible para todas las edades","\"Disfruta de la impresionante Montaña de Montserrat donde encontraréis el Museo con las salas modernistas de Puig i Cadafalch, lugar que acoge colecciones de gran valor en el corazón de la emblemática montaña.","Montaña, bicicleta, excursión laga","image.png"),
-
-                new Experience("Descubre la costa en barco de vela", 250,4,"Actividad disponible para todas edades y accesible para silla de ruedas","Disfruta de un hermoso paseo acuático en barco de vela por la increíble costa de Barcelona. Una escapada veraniega apta incluso para los días más calurosos del año. Descubre los encantadores alrededores de la ciudad de Barcelona y visita desde el mar sus más impresionantes playas y calas.","playa,barco, excursión larga","image.png"),
-
-                new Experience("Descubre la Barcelona Modernista de noche", 200,4,"Actividad disponible para todas las edades y accesible para silla de ruedas","Desplazarse a pie es una de las mejores formas de descubrir las maravillas modernistas que se esconden en el barcelonés distrito del Eixample, ubicado en el centro de la ciudad.","ciudad a pie,excursión larga","image.png"),
-
-                new Experience("Del huerto a la mesa", 145,3,"Actividad disponible para todas las edades","Comparte con los más pequeños las maravillas de la naturaleza. En esta excursión breve de tres horas, podréis plantar vuestras propias hortalizas y verduras en el huerto de Can Gilabert, ubicado en el corazón del Montbaig.","Montaña, a pie,excursión corta","image.png"),
-
-                new Experience("Arte en la montaña sagrada", 125,2,"Actividad disponible para todas las edades","Disfruta de la impresionante Montaña de Montserrat donde encontraréis el Museo con las salas modernistas de Puig i Cadafalch, lugar que acoge colecciones de gran valor en el corazón de la emblemática montaña.","Montaña, a pie,excursión corta","image.png")
-        );
 
         experienceRepository.saveAll(experiences);
     }
